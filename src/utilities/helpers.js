@@ -11,9 +11,9 @@ export const formatCurrency = (num) => {
 export const formatDateTime = (date, formatter) => {
     switch (formatter) {
         case 'timeOnly':
-            return date?.format('h:mma')
+            return date.format('h:mma')
 
         default:
-            return date?.format('dddd, MMM D | h:mma')
+            return date.format('dddd, MMM D | h:mma')
     }
 }
