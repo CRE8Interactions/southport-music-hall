@@ -1,0 +1,10 @@
+@use '../../../scss/abstracts' as *;
+
+.hero {
+    max-width: 314px;
+    margin: 0 auto;
+
+    @include breakpoint-min(md) {
+        max-width: 461px;
+    }
+}

@@ -1,6 +1,8 @@
 @forward 'container';
-@use 'typography';
+@forward 'typography';
 @forward 'spacing';
 @use 'buttons';
 @use 'card';
+@use 'dropdown';
+@use 'badge';
 @forward 'links';

@@ -1,0 +1,12 @@
+@use '../abstracts' as *;
+
+$pills-pad-x: rem(16);
+$pills-pad-y: rem(12);
+
+.nav-pills {
+    .nav-item {
+        .nav-link {
+            padding: $pills-pad-y $pills-pad-x;
+        }
+    }
+}
