@@ -11,7 +11,7 @@ import history2 from '/public/images/southport-hall-history_2.png';
 export default function History() {
 
     return (
-        <Card body className='card--light card-sm'>
+        <Card body>
             <Card.Title as="h5">Our history</Card.Title>
             <Card.Text>Southport Hall originally opened for business in the early 1900’s, operating primarily as an illegal casino founded by Joe Hyland. A handful of clubs like Southport operated in “The Free State” of Jefferson during this time. Over a century later, Southport Hall is the only speak easy still standing. Called Hyland’s Southport Inn, the venue operated much like a private club, where an elite clientele enjoyed roulette, craps, poker, blackjack and keno. The club changed hands over a 20-year period, purchased first by Rudy and George O’Dwyer and renamed the Southport Club, and then by Charlie Kerner, who called it the Old Southport Club. Later, reputed New Orleans Mafia boss Carlos Marcello operated the venue as the New Southport Club.</Card.Text>
             <Card.Text>By the 1960s, the hall was no longer operating as an illegal casino but was instead known as Farhad Grotto, a gathering spot for the Mystic Order of the Veiled Prophets of the Enchanted Realm. The social organization later moved to Harahan and is well- known for its “Bug Patrol,” a swarm of black and red dune buggies appearing in many Carnival parades.</Card.Text>
@@ -24,7 +24,7 @@ export default function History() {
                         src={history1}
                         quality={100}
                         className="image"
-                        alt="Southport Hall Counting Room"
+                        alt="Picture of Southport Hall Counting Room"
                         width="300"
                         height="231" />
                 </Col>
@@ -33,7 +33,7 @@ export default function History() {
                         src={history2}
                         quality={100}
                         className="image"
-                        alt="Southport Hall Counting Room"
+                        alt="Picture of Southport Hall Counting Room"
                         width="300"
                         height="231" />
                 </Col>

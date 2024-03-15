@@ -9,7 +9,7 @@ export default function Packages() {
 
     return (
         <section>
-            <Card body className='card--light card-sm'>
+            <Card body>
                 <Card.Title as="h5" className='text-center'>Download our private event packages to learn more.</Card.Title>
                 <Stack as="ul" direction="horizontal" gap={3} className='flex-wrap justify-content-center gap-lg-4'>
                     <File title="Private events" link="https://southport.nyc3.cdn.digitaloceanspaces.com/privateparty.pdf" />

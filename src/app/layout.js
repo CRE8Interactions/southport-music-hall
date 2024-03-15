@@ -45,10 +45,12 @@ export default function RootLayout({ children }) {
                 }
             `}</style>
 
-                <Navigation />
-                <main className='container'>
-                    {children}
-                </main>
+                <div className="gradient">
+                    <Navigation />
+                    <main className='container'>
+                        {children}
+                    </main>
+                </div>
                 <Footer />
                 <Script
                     id="fb-pixel"

@@ -3,88 +3,155 @@
 @use './container' as *;
 @use '../theme/colors' as *;
 
+.headline {
+    &-1 {
+        @extend .h1 !optional; // 56
+    }
+    // section headings
+    &-2 {
+        @extend .h2 !optional; // 48
+    }
+    // section headings, card titles
+    &-3 {
+        @extend .h3 !optional; // 32
+    }
+    // card titles, event card text
+    &-4 {
+        @extend .h4 !optional; // 28
+    }
+    &-5 {
+        @extend .h5 !optional; // 26
+    }
+    &-6 {
+        @extend .h6 !optional; // 20
+    }
+}
+
+// utility classes for type classes
+%bold {
+    font-weight: $fw-semi-bold;
+}
+
+%medium {
+    font-weight: $fw-medium;
+}
+
+// 16px
 .normal {
-	font-size: $body-2;
+    font-size: $body-2;
+
+    &-bold {
+        @extend %bold !optional;
+    }
+
+    // 18px
+    &-md {
+        font-size: $body-3;
+
+        &-lg {
+            @include breakpoint-min(md) {
+                font-size: $body-1;
+            }
+        }
+    }
+
+    // 16 to 24
+    &-lg {
+        font-size: $body-2;
+
+        @include breakpoint-min(md) {
+            font-size: $body-1;
+        }
+    }
 }
 
+// 24px
 .fs-md {
-	font-size: $body-1;
+    font-size: $body-1;
+
+    &-bold {
+        @extend %bold !optional;
+    }
 }
 
-.normal-sm {
-	font-size: $body-2;
+// 14px
+.small {
+    font-size: $small;
 
-	@include breakpoint-min(md) {
-		font-size: $body-1;
-	}
+    &-bold {
+        @extend %medium !optional;
+    }
 }
 
-.heading-font {
-	font-weight: $fw-bold;
-}
-
-.section-heading {
-	h1,
-	h2,
-	h3,
-	h4 {
-		margin: 0;
-		@extend .heading-font !optional;
-	}
-
-	margin-bottom: $heading-spacer;
-}
-
-.heading {
-	margin: 0px;
-	font-size: $h4-font-size;
-	@include breakpoint-min(md) {
-		font-size: $h2-font-size;
-	}
-
-	&-lg {
-		font-size: $h2-font-size;
-		@include breakpoint-min(md) {
-			font-size: $h1-font-size;
-		}
-	}
-}
-
-.fw-medium {
-	font-weight: $fw-medium;
-}
-
-.fw-semi-bold {
-	font-weight: $fw-semi-bold;
-}
-
-.fw-bold {
-	font-weight: $fw-bold !important;
-}
-
-.text-uppercase {
-	text-transform: uppercase;
-	font-weight: $fw-bold;
-	font-family: $font-body;
-}
-
+// 12px
 .caption {
-	font-size: $caption;
-	margin-bottom: rem(3);
+    font-size: $caption;
+
+    &-bold {
+        @extend %bold !optional;
+    }
 }
 
 .nav-link {
-	font-size: rem(16);
+    @include breakpoint-min(lg) {
+        font-size: $body-2;
+    }
+}
 
-	&-lg {
-		font-size: $body-2;
-	}
+.heading-font {
+    font-weight: $fw-bold;
+}
+
+.section-heading {
+    h1,
+    h2,
+    h3,
+    h4 {
+        margin: 0;
+        @extend .heading-font !optional;
+    }
+
+    margin-bottom: $heading-spacer;
+}
+
+.heading {
+    margin: 0px;
+    font-size: $body-1;
+    @include breakpoint-min(md) {
+        font-size: $h3-font-size;
+    }
+
+    // hero
+    &-lg {
+        font-size: $h3-font-size;
+        @include breakpoint-min(md) {
+            font-size: $h2-font-size;
+        }
+    }
+}
+
+.fw-medium {
+    font-weight: $fw-medium;
+}
+
+.fw-semi-bold {
+    font-weight: $fw-semi-bold;
+}
+
+.fw-bold {
+    font-weight: $fw-bold !important;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+    font-weight: $fw-bold;
+    font-family: $font-body;
 }
 
 %multi-line-truncate {
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
-	-webkit-line-clamp: 2;
-	text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
 }

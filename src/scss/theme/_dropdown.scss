@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+@use '../layout/pills' as *;
+@use './colors' as *;
+
+$enable-caret: false;
+$dropdown-padding-x: rem(12);
+$dropdown-padding-y: rem(12);
+$dropdown-min-width: 157px;
+$dropdown-link-color: $body-color;
+$dropdown-border-radius: rem(12);
+$dropdown-font-size: $small;
+$dropdown-link-hover-bg: $nav-pills-link-active-bg;
+$dropdown-item-padding-x: $pills-pad-x;
+$dropdown-item-padding-y: $pills-pad-y;

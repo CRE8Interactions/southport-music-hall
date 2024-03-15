@@ -12,7 +12,7 @@ import Col from 'react-bootstrap/Col'
 export default function EventCard({ event }) {
     let highTicketCost = Math.max(...event.tickets.map(o => o.cost))
     let lowTicketCost = Math.min(...event.tickets.map(o => o.cost))
-    
+
     let convertedStart = moment(event?.start).utcOffset(-5, false)
     let convertedEnd = moment(event?.end).utcOffset(-5, false)
     let convertedDoorsOpen = moment(event?.doorsOpen).utcOffset(-5, false)
@@ -25,7 +25,7 @@ export default function EventCard({ event }) {
                     src={event.image.url}
                     width={event.image.width}
                     height={event.image.height}
-                    alt={event.name}
+                    alt={`Cover art for ${event?.name} event`}
                 />
                 <Card.Body>
                     <Row className="flex-grow-1">
@@ -33,7 +33,7 @@ export default function EventCard({ event }) {
                             <Stack className='align-items-center text-center'>
                                 <Card.Text>
                                     <span className='text-uppercase text-primary caption d-block'>{convertedStart.format('MMM')}</span>
-                                    <span className="h4">{convertedStart.date()}</span>
+                                    <span className="headline-4 fw-bold">{convertedStart.date()}</span>
                                 </Card.Text>
                             </Stack>
                         </Col>
@@ -46,13 +46,13 @@ export default function EventCard({ event }) {
                                 <Col className='pe-0'>
                                     <Stack gap={1}>
                                         <span className='small text-primary'>Concert Hall</span>
-                                        <span className='fw-bold'>{formatCurrency(lowTicketCost)}+</span>
+                                        <span className='normal-md fw-bold'>{formatCurrency(lowTicketCost)}+</span>
                                     </Stack>
                                 </Col>
                                 <Col className="d-flex">
                                     <Stack className='mt-auto align-items-end'>
-                                        <span className='caption fw-semi-bold m-0 text-nowrap'>Door time: {formatDateTime(convertedDoorsOpen, 'timeOnly')}</span>
-                                        <span className='caption text-muted m-0'>Age 18+</span>
+                                        <span className='caption caption-bold m-0 text-nowrap'>Door time: {formatDateTime(convertedDoorsOpen, 'timeOnly')}</span>
+                                        <span className='caption text-muted m-0'>Age {event?.ageMinimum || '18'}+</span>
                                     </Stack>
                                 </Col>
                             </Row>

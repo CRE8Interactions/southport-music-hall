@@ -10,7 +10,7 @@ export default function Directions() {
 
     return (
         <section>
-            <Card body className='card--light card-sm'>
+            <Card body>
                 <Row className='grid-container'>
                     <Col xs={12} md={6} className='col'>
                         <Card.Title as="h5" className='card-title-sm card-title--primary'>Directions from I-10E</Card.Title>

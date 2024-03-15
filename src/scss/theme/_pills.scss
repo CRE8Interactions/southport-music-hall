@@ -1,0 +1,6 @@
+@use './borders' as *;
+@use './colors' as *;
+
+$nav-pills-border-radius: 112px;
+$nav-pills-link-active-color: $primary;
+$nav-pills-link-active-bg: rgba($primary, 0.05);

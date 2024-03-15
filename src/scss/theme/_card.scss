@@ -1,11 +1,11 @@
 @use '../abstracts' as *;
 @use '../layout/spacing' as *;
-@use './borders' as theme;
+@use './borders' as *;
 
 $card-bg: #ffff;
 $card-border-color: transparent;
-$card-border-radius: theme.$border-radius;
-$card-inner-border-radius: theme.$border-radius theme.$border-radius 0px 0px;
+$card-border-radius: $border-radius;
+$card-inner-border-radius: $br-md $br-md 0px 0px;
 $card-title-spacer-y: $text-spacer-sm;
 
 // card body

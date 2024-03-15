@@ -8,33 +8,34 @@
 
 // event and venue cards styling on Browse page
 .card.event-card {
-	height: 100%;
+    height: 100%;
+    border-radius: $br-md;
 
-	.card {
-		&-img-top {
-			height: rem(211);
-			background-color: $clr-neutral-6;
-			border-radius: $card-inner-border-radius;
-		}
+    .card {
+        &-img-top {
+            height: rem(211);
+            background-color: $muted;
+            border-radius: $card-inner-border-radius;
+        }
 
-		&-body {
-			display: flex;
-			flex-direction: column;
-			flex-basis: rem(178);
-			font-weight: $fw-medium;
-			padding: rem(12) rem(24) rem(20);
-		}
+        &-body {
+            display: flex;
+            flex-direction: column;
+            flex-basis: rem(178);
+            font-weight: $fw-medium;
+            padding: rem(12) rem(24) rem(20);
+        }
 
-		&-title {
-			font-size: $body-2;
-			margin-bottom: 0px;
-			line-height: 1.5;
+        &-title {
+            @extend .normal-md !optional;
+            margin-bottom: 0px;
+            line-height: 1.5;
 
-			@extend %multi-line-truncate !optional;
-		}
+            @extend %multi-line-truncate !optional;
+        }
 
-		&-subtitle {
-			order: -1;
-		}
-	}
+        &-subtitle {
+            order: -1;
+        }
+    }
 }

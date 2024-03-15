@@ -6,70 +6,81 @@
 @use '../theme/colors' as *;
 
 .card {
-	box-shadow: $box-shadow;
+    box-shadow: $box-shadow;
 
-	&--light {
-		background-color: #FFFF;
-	}
+    &-body {
+        @include breakpoint-min(md) {
+            padding: rem(32);
+        }
+    }
 
-	&-body {
-		@include breakpoint-min(md) {
-			padding: rem(32);
-		}
-	}
+    &-title {
+        @extend .headline-6 !optional;
+        font-weight: $fw-semi-bold;
 
-	&-title {
-		font-size: $h4-font-size;
-		font-weight: $fw-bold;
+        $card-title-spacer-sm: $text-spacer-xs;
 
-		$card-title-spacer-sm: $text-spacer-xs;
+        @include breakpoint-min(lg) {
+            font-size: $body-1;
+        }
 
-		@include breakpoint-max(md) {
-			font-size: rem(20);
-		}
+        // contact us - directions card
+        &-sm {
+            @extend .normal-md !optional;
+            margin-bottom: $card-title-spacer-sm;
 
-		&-sm {
-			font-size: $body-2;
-			margin-bottom: $card-title-spacer-sm;
+            @include breakpoint-min(md) {
+                font-size: $h6-font-size;
+            }
+        }
 
-			@include breakpoint-min(md) {
-				font-size: rem(20);
-			}
-		}
+        // contact us
+        &-lg {
+            @extend .headline-5 !optional;
+            margin-bottom: rem(6);
+        }
 
-		&-lg {
-			font-size: $h3-font-size;
-			margin-bottom: $card-title-spacer-sm;
-		}
+        &--primary {
+            color: $primary;
+        }
+    }
 
-		&--primary {
-			color: $primary;
-		}
-	}
+    &-subtitle {
+        margin-top: rem(4);
+        margin-bottom: rem(8);
+        color: $text-muted;
+        font-size: $caption;
+    }
 
-	&-subtitle {
-		margin-top: rem(4);
-		margin-bottom: rem(8);
-		color: $text-muted;
-		font-size: $caption;
-	}
+    &-text,
+    ul {
+        line-height: 1.8;
+        font-weight: $fw-medium;
 
-	&-text,
-	ul {
-		line-height: 1.8;
-		font-weight: $fw-medium;
+        @include breakpoint-max(md) {
+            font-size: $small;
+        }
 
-		@include breakpoint-max(md) {
-			font-size: $small;
-		}
+        & + &,
+        & + .row {
+            margin-top: $text-spacer-sm;
+        }
+    }
 
-		& + &,
-		& + .row {
-			margin-top: $text-spacer-sm;
-		}
-	}
+    .row + &-text {
+        margin-top: $text-spacer-sm;
+    }
 
-	.row + &-text {
-		margin-top: $text-spacer-sm;
-	}
+    // footer card
+    &-lg {
+        .card {
+            &-body {
+                padding: rem(48) $text-spacer-lg;
+
+                @include breakpoint-min(lg) {
+                    padding: rem(64) rem(48);
+                }
+            }
+        }
+    }
 }

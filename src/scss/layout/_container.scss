@@ -2,27 +2,50 @@
 @use './spacing' as *;
 
 $pad-sm: rem(24);
-$pad-md: rem(32);
+$pad-md: rem(40);
 
 .container {
-	max-width: 1130px;
-	margin: 0 auto;
-	@include breakpoint-max(md) {
-		padding: 0px $pad-sm;
-	}
-
-	@include breakpoint-inBetween(md, xl) {
-		padding: 0px $pad-md;
-	}
+    max-width: 1130px;
+    margin: 0 auto;
+    padding-left: $pad-sm;
+    padding-right: $pad-sm;
+    @include breakpoint-min(md) {
+        padding-right: $pad-md;
+        padding-left: $pad-md;
+    }
 }
 
 .d-flex-column {
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .logo {
-	@include breakpoint-max(md) {
-		width: rem(40);
-	}
+    @include breakpoint-max(lg) {
+        width: rem(30);
+    }
+}
+
+.mobile-only {
+    @include breakpoint-min(md) {
+        display: none;
+    }
+}
+
+.mobile-tablet-only {
+    @include breakpoint-min(lg) {
+        display: none;
+    }
+}
+
+.tablet-desktop-only {
+    @include breakpoint-max(md) {
+        display: none;
+    }
+}
+
+.desktop-only {
+    @include breakpoint-max(lg) {
+        display: none;
+    }
 }

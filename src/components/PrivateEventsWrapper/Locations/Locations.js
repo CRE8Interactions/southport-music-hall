@@ -14,14 +14,14 @@ export default function Locations() {
 
     return (
         <section className="spacer-top">
-            <p className="normal-sm text-center mb-5">Southport offers two exceptional locations for private events: The Concert Hall and The Glassed Atrium/Front Bar Area. Our versatile venue caters to a wide range of occasions, including weddings, reunions, parties, and more.</p>
-            <Card body className='card--light card-sm'>
+            <p className="normal-md normal-md-lg text-center mb-5">Southport offers two exceptional locations for private events: The Concert Hall and The Glassed Atrium/Front Bar Area. Our versatile venue caters to a wide range of occasions, including weddings, reunions, parties, and more.</p>
+            <Card body>
                 <Row className='grid-container-sm'>
                     <Col xs={12} md={6} className='col'>
                         <Image
                             src={glassedAtriumBar}
                             quality={100}
-                            alt="Glassed Atrium and Front Bar"
+                            alt="Picture of Glassed Atrium and Front Bar"
                             className={`${styles.image} image`}
                             width="516"
                             height="315"
@@ -31,7 +31,7 @@ export default function Locations() {
                         <Image
                             src={concertHall}
                             quality={100}
-                            alt="The concert Hall"
+                            alt="Picture of the concert Hall"
                             className={`${styles.image} image`}
                             width="516"
                             height="315"

@@ -14,12 +14,12 @@ export default function Contact() {
 
     return (
         <section>
-            <Card body className={`${styles.card} card--light card-sm`}>
+            <Card body className={styles.card}>
                 <Row className='grid-container gx-md-4'>
                     <Col xs={12} md={6} lg={4}>
                         <Card.Title as="h5" className='card-title-lg'>Southport Hall</Card.Title>
                         <div className='card-text'>
-                            <address className=' fw-semi-bold'>
+                            <address className='lh-normal'>
                                 <p>200 Monticello Ave.</p>
                                 <p>Jefferson, LA 70121</p>
                             </address>

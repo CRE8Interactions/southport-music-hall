@@ -4,28 +4,41 @@
 @use '../../scss/layout/spacing' as *;
 
 .footer {
-	padding: 0px $text-spacer-xs;
-	@extend .bg-light !optional;
-	border-radius: $br-lg $br-lg 0px 0px;
-}
+    padding-bottom: $text-spacer;
 
-.socialIcons {
-	gap: $gap-xs;
-	justify-content: center;
-}
+    .info,
+    .address,
+    .socialIcons {
+        @include breakpoint-max(lg) {
+            justify-content: center;
+            align-items: center;
+        }
+    }
 
-.poweredBy {
-	border-top: border();
-	margin-top: $text-spacer-sm;
-	padding-top: $text-spacer-xs;
-	width: 100%;
-	font-family: $font-body;
-	font-weight: $fw-medium;
-	span {
-		vertical-align: middle;
-	}
+    .address {
+        @include breakpoint-min(lg) {
+            justify-content: space-between;
+        }
+    }
 
-	@include breakpoint-min(md) {
-		padding-top: $text-spacer-sm;
-	}
+    .socialIcons {
+        gap: $gap-xs;
+    }
+
+    .poweredBy {
+        @include breakpoint-max(lg) {
+            border-top: border();
+            margin-top: $text-spacer;
+            padding-top: $text-spacer;
+            width: 100%;
+        }
+        @include breakpoint-min(lg) {
+            border-left: border();
+            padding-left: $text-spacer;
+            flex: 1 1;
+        }
+        span {
+            vertical-align: middle;
+        }
+    }
 }
