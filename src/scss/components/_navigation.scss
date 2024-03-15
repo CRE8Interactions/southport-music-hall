@@ -1,54 +1,45 @@
 @use '../abstracts' as *;
-@use '../layout/links' as *;
 @use '../layout/container' as *;
+@use '../layout/pills' as *;
 @use '../layout/spacing' as *;
 @use '../theme/colors' as *;
 
 // override bootstrap styling
 .navigation {
-	border-radius: 0px 0px $br-lg $br-lg;
-	@extend .bg-light !optional;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    padding-bottom: 0px;
+    @include breakpoint-min(md) {
+        padding-top: $text-spacer;
+    }
 
-	.navbar {
-		&-brand {
-			padding-top: rem(3);
+    .container {
+        padding: rem(12) rem(20);
+        border-radius: $br-lg;
+        background-color: $white;
+        box-shadow: 0px 4px 64px 0px rgba(0, 0, 0, 0.04);
+        @include breakpoint-min(lg) {
+            width: max-content;
+        }
+    }
 
-			@include breakpoint-min(md) {
-				padding-right: rem(13);
-			}
-		}
+    .navbar {
+        &-brand {
+            padding: 0px;
+        }
+    }
 
-		&-toggler {
-			padding-right: 0px;
-
-			&.collapsed {
-				.navbar-toggler-icon {
-					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='33' viewBox='0 0 32 33' fill='none'%3E%3Cpath d='M27.8522 22.7266C28.2451 22.7266 28.6219 22.867 28.8997 23.1171C29.1776 23.3671 29.3337 23.7063 29.3337 24.0599C29.3337 24.4135 29.1776 24.7527 28.8997 25.0027C28.6219 25.2528 28.2451 25.3932 27.8522 25.3932H4.14847C3.75556 25.3932 3.37874 25.2528 3.10091 25.0027C2.82308 24.7527 2.66699 24.4135 2.66699 24.0599C2.66699 23.7063 2.82308 23.3671 3.10091 23.1171C3.37874 22.867 3.75556 22.7266 4.14847 22.7266H27.8522ZM27.8522 14.7266C28.2451 14.7266 28.6219 14.867 28.8997 15.1171C29.1776 15.3671 29.3337 15.7063 29.3337 16.0599C29.3337 16.4135 29.1776 16.7527 28.8997 17.0027C28.6219 17.2528 28.2451 17.3932 27.8522 17.3932H4.14847C3.75556 17.3932 3.37874 17.2528 3.10091 17.0027C2.82308 16.7527 2.66699 16.4135 2.66699 16.0599C2.66699 15.7063 2.82308 15.3671 3.10091 15.1171C3.37874 14.867 3.75556 14.7266 4.14847 14.7266H27.8522ZM27.8522 6.72656C28.2451 6.72656 28.6219 6.86704 28.8997 7.11709C29.1776 7.36714 29.3337 7.70627 29.3337 8.0599C29.3337 8.41352 29.1776 8.75266 28.8997 9.0027C28.6219 9.25275 28.2451 9.39323 27.8522 9.39323H4.14847C3.75556 9.39323 3.37874 9.25275 3.10091 9.0027C2.82308 8.75266 2.66699 8.41352 2.66699 8.0599C2.66699 7.70627 2.82308 7.36714 3.10091 7.11709C3.37874 6.86704 3.75556 6.72656 4.14847 6.72656H27.8522Z' fill='%23141416'/%3E%3C/svg%3E");
-				}
-			}
-		}
-
-		&-collapse {
-			z-index: 999;
-
-			@include breakpoint-max(md) {
-				padding-bottom: rem(12);
-				text-align: center;
-			}
-		}
-	}
-
-	ul {
-		gap: $gap-sm;
-		@include breakpoint-max(md) {
-			text-align: center;
-			width: max-content;
-			margin: auto;
-		}
-	}
-	.nav-link {
-		&.active {
-			border-bottom: border($border-width: 2px, $color: $primary);
-		}
-	}
+    ul {
+        gap: $gap-sm;
+        @include breakpoint-max(md) {
+            text-align: center;
+            width: max-content;
+            margin: auto;
+        }
+    }
+    .nav-link {
+        padding-top: $pills-pad-y;
+        padding-bottom: $pills-pad-y;
+    }
 }

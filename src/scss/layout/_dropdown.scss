@@ -1,0 +1,40 @@
+@use '../abstracts' as *;
+@use '../layout/typography' as *;
+@use '../layout/pills' as *;
+@use '../theme/pills' as *;
+
+// navigation dropdown
+.dropdown {
+    &-toggle {
+        display: flex;
+        align-items: center;
+        gap: rem(8);
+        border-radius: $nav-pills-border-radius;
+        border: none;
+        color: $nav-pills-link-active-color !important;
+        font-family: $font-body;
+        @extend .small !optional;
+        @extend .small-bold !optional;
+        background-color: $nav-pills-link-active-bg !important;
+        padding: $pills-pad-y $pills-pad-x;
+
+        &::after {
+            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.79289 8.54289C5.18342 8.15237 5.81658 8.15237 6.20711 8.54289L12 14.3358L17.7929 8.54289C18.1834 8.15237 18.8166 8.15237 19.2071 8.54289C19.5976 8.93341 19.5976 9.56658 19.2071 9.9571L13.4142 15.75C12.6332 16.531 11.3668 16.531 10.5858 15.75L4.79289 9.95711C4.40237 9.56658 4.40237 8.93342 4.79289 8.54289Z' fill='%23777E91'/%3E%3C/svg%3E");
+            line-height: 0px;
+            filter: $primary-filter;
+        }
+    }
+
+    &-menu {
+        border-color: transparent;
+        border-width: 0px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        text-align: center;
+
+        .dropdown-item {
+            border-radius: $nav-pills-border-radius;
+            font-weight: $fw-medium;
+        }
+    }
+}
