@@ -3,7 +3,34 @@
 @use './container' as *;
 @use '../theme/colors' as *;
 
+h1,
+.h1 {
+    font-size: $h1-font-size;
+}
+h2,
+.h2 {
+    font-size: $h2-font-size;
+}
+h3,
+.h3 {
+    font-size: $h3-font-size;
+}
+h4,
+.h4 {
+    font-size: $h4-font-size;
+}
+// rearrange because of order of precedence - card titles
+h6,
+.h6 {
+    font-size: $h6-font-size;
+}
+h5,
+.h5 {
+    font-size: $h5-font-size;
+}
+
 .headline {
+    // private events header text
     &-1 {
         @extend .h1 !optional; // 56
     }
@@ -121,11 +148,17 @@
         font-size: $h3-font-size;
     }
 
-    // hero
+    // hero, private events header
     &-lg {
-        font-size: $h3-font-size;
+        @extend .headline-3 !optional;
         @include breakpoint-min(md) {
             font-size: $h2-font-size;
+        }
+    }
+    // private events header
+    &-xl {
+        @include breakpoint-min(md) {
+            font-size: $h1-font-size;
         }
     }
 }
@@ -146,6 +179,12 @@
     text-transform: uppercase;
     font-weight: $fw-bold;
     font-family: $font-body;
+}
+
+%text-truncate {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 %multi-line-truncate {

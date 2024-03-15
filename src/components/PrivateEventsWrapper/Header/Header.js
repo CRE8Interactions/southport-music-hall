@@ -6,7 +6,7 @@ export default function Header() {
 
     return (
         <header className={styles.jumbotron}>
-            <h1 className='heading-lg m-0 text-white'>Private Events</h1>
+            <h1 className='heading-lg heading-xl m-0 text-white'>Private Events</h1>
         </header>
     );
 }

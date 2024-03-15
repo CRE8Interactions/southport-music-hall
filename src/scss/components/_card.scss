@@ -23,7 +23,7 @@
             flex-direction: column;
             flex-basis: rem(178);
             font-weight: $fw-medium;
-            padding: rem(12) rem(24) rem(20);
+            padding: rem(12) rem(20) rem(15);
         }
 
         &-title {
@@ -37,5 +37,9 @@
         &-subtitle {
             order: -1;
         }
+    }
+
+    .room {
+        @extend %text-truncate !optional;
     }
 }

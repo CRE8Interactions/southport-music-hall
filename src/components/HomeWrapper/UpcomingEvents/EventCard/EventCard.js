@@ -31,30 +31,30 @@ export default function EventCard({ event }) {
                     <Row className="flex-grow-1">
                         <Col xs={2}>
                             <Stack className='align-items-center text-center'>
-                                <Card.Text>
-                                    <span className='text-uppercase text-primary caption d-block'>{convertedStart.format('MMM')}</span>
-                                    <span className="headline-4 fw-bold">{convertedStart.date()}</span>
-                                </Card.Text>
+                                <span className='text-uppercase text-primary caption d-block'>{convertedStart.format('MMM')}</span>
+                                <span className="headline-4 fw-bold">{convertedStart.date()}</span>
                             </Stack>
                         </Col>
-                        <Col xs={10} className='d-flex-column justify-content-between pe-0'>
+                        <Col xs={10} className='d-flex-column justify-content-between'>
                             <div className='d-flex-column'>
                                 <Card.Title as="h5">{event.name}</Card.Title>
                                 <Card.Subtitle as="h6">{formatDateTime(moment(convertedStart))} - {formatDateTime(moment(convertedEnd), 'timeOnly')}</Card.Subtitle>
                             </div>
-                            <Row>
-                                <Col className='pe-0'>
-                                    <Stack gap={1}>
-                                        <span className='small text-primary'>Concert Hall</span>
-                                        <span className='normal-md fw-bold'>{formatCurrency(lowTicketCost)}+</span>
-                                    </Stack>
+                            <Row className="gap-1">
+                                <Col>
+                                    <p className='small room text-primary'>{event?.venue?.name}</p>
                                 </Col>
-                                <Col className="d-flex">
-                                    <Stack className='mt-auto align-items-end'>
-                                        <span className='caption caption-bold m-0 text-nowrap'>Door time: {formatDateTime(convertedDoorsOpen, 'timeOnly')}</span>
-                                        <span className='caption text-muted m-0'>Age {event?.ageMinimum || '18'}+</span>
-                                    </Stack>
-                                </Col>
+                                <Row className='m-0 align-items-center'>
+                                    <Col className='ps-0'>
+                                        <span className='normal-md m-0 fw-bold'>{formatCurrency(lowTicketCost)}+</span>
+                                    </Col>
+                                    <Col className="d-flex">
+                                        <Stack className='mt-auto align-items-end'>
+                                            <span className='caption caption-bold m-0 text-nowrap'>Door time: {formatDateTime(convertedDoorsOpen, 'timeOnly')}</span>
+                                            <span className='caption text-muted m-0'>Age {event?.ageMinimum || '18'}+</span>
+                                        </Stack>
+                                    </Col>
+                                </Row>
                             </Row>
                         </Col>
                     </Row>

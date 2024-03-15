@@ -1,5 +1,5 @@
 @forward 'container';
-@forward 'typography';
+@use 'typography';
 @forward 'spacing';
 @use 'buttons';
 @use 'card';
