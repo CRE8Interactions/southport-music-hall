@@ -46,9 +46,11 @@ h5,
     &-4 {
         @extend .h4 !optional; // 28
     }
+    // card titles
     &-5 {
         @extend .h5 !optional; // 26
     }
+    // card titles
     &-6 {
         @extend .h6 !optional; // 20
     }
