@@ -16,6 +16,10 @@
     }
 
     .address {
+        @include breakpoint-max(lg) {
+            text-align: center;
+        }
+
         @include breakpoint-min(lg) {
             justify-content: space-between;
         }

@@ -10,7 +10,6 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 export default function EventCard({ event }) {
-    let highTicketCost = Math.max(...event.tickets.map(o => o.cost))
     let lowTicketCost = Math.min(...event.tickets.map(o => o.cost))
 
     let convertedStart = moment(event?.start).utcOffset(-5, false)

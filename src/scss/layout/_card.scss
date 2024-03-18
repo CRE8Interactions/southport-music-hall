@@ -10,7 +10,7 @@
 
     &-body {
         @include breakpoint-min(md) {
-            padding: rem(32);
+            padding: $text-spacer;
         }
     }
 

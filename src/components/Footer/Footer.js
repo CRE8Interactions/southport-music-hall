@@ -28,7 +28,7 @@ export default function Footer() {
                         <h6 className='mt-3 mt-lg-0 mt-md-5 mb-1 headline-6'>Southport Hall</h6>
                         <Stack gap={2} className={`gap-md-1 ${styles.address}`}>
                             <address className='m-0 text-muted fw-medium'>
-                                <p>200 Monticello Ave, <span className="d-block d-lg-inline">Jefferson, LA, 70121</span></p>
+                                <p>200 Monticello Ave, <span className="d-block d-lg-inline">Jefferson, LA 70121</span></p>
                             </address>
                             <Stack direction="horizontal" as="ul" className={styles.socialIcons}>
                                 <li>
@@ -37,13 +37,13 @@ export default function Footer() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="https://www.instagram.com/southporthall" target="_blank">
-                                        <Image src={instagram} alt="instagram" />
+                                    <Link href="https://twitter.com/Southporthall" target="_blank">
+                                        <Image src={twitter} alt="twitter" />
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="https://www.instagram.com/Southporthall" target="_blank">
-                                        <Image src={twitter} alt="twitter" />
+                                    <Link href="https://www.instagram.com/southporthall" target="_blank">
+                                        <Image src={instagram} alt="instagram" />
                                     </Link>
                                 </li>
                             </Stack>
