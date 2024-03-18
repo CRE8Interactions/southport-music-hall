@@ -1,21 +1,24 @@
 @use '../../../scss/abstracts' as *;
 @use '../../../scss/layout/spacing' as *;
+@use '../../../scss/theme/borders' as *;
 
 .card {
-	address {
-		font-size: rem(16);
-	}
+    address {
+        font-size: $body-2;
+    }
 }
 
 .image {
-	height: 100%;
-	@include breakpoint-max(md) {
-		height: 226px;
-	}
+    height: 100%;
+    border-radius: $border-radius-sm;
+
+    @include breakpoint-max(md) {
+        height: 226px;
+    }
 }
 
 .map {
-	@include breakpoint-max(md) {
-		order: -1;
-	}
+    @include breakpoint-max(md) {
+        order: -1;
+    }
 }

@@ -9,7 +9,7 @@
 // event and venue cards styling on Browse page
 .card.event-card {
     height: 100%;
-    border-radius: $br-md;
+    border-radius: $card-inner-border-radius;
 
     .card {
         &-img-top {

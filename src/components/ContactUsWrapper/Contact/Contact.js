@@ -39,7 +39,7 @@ export default function Contact() {
                             src={map}
                             quality={100}
                             alt="Map of Southport Hall"
-                            className={`${styles.image} image`}
+                            className={styles.image}
                             width="742"
                             height="301"
                             priority
