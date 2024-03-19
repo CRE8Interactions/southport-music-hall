@@ -42,7 +42,7 @@ $text-spacer-xs: rem(16);
     }
 }
 
-// upcoming-events, history, contact us
+// upcoming events, history, contact us
 .grid-container {
     @include breakpoint-max(md) {
         gap: $gap;
@@ -51,9 +51,16 @@ $text-spacer-xs: rem(16);
         &-sm {
             gap: $gap-sm;
         }
-        // upcoming-events
+        // upcoming events
         &-lg {
             gap: $gap-lg;
+        }
+    }
+
+    // upcoming events
+    &.spacer-top {
+        @include breakpoint-min(md) {
+            margin-top: calc($spacer - $text-spacer);
         }
     }
 }
