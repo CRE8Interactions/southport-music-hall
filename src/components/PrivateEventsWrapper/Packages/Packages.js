@@ -14,7 +14,8 @@ export default function Packages() {
                 <Stack as="ul" direction="horizontal" gap={3} className='flex-wrap justify-content-center gap-lg-4'>
                     <File title="Private events" link="https://southport.nyc3.cdn.digitaloceanspaces.com/privateparty.pdf" />
                     <File title="Weddings" link="https://southport.nyc3.cdn.digitaloceanspaces.com/weddingpackage.pdf" />
-                    <File title="Reunions" link="https://southport.nyc3.cdn.digitaloceanspaces.com/reunions.pdf" />
+                    <File title="Bridal & Baby Showers" link="https://southport.nyc3.cdn.digitaloceanspaces.com/reunions.pdf" />
+                    <File title="Rental Information" link="https://southport.nyc3.cdn.digitaloceanspaces.com/reunions.pdf" />
                     <File title="Sweet 16 / Prom" link="https://southport.nyc3.cdn.digitaloceanspaces.com/sweetsixteen.pdf" />
                 </Stack>
             </Card>

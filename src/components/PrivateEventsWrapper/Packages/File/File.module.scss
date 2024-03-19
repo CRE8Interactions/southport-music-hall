@@ -4,25 +4,25 @@
 @use '../../../../scss/theme/borders' as *;
 
 .container {
-	display: flex;
-	justify-content: center;
-	flex: 0 0 45%;
-	background-color: $gray-300;
-	padding: rem(16) rem(8);
-	border-radius: $border-radius-sm;
+    display: flex;
+    justify-content: center;
+    flex: 0 0 42%;
+    background-color: $gray-300;
+    padding: rem(16) rem(8);
+    border-radius: $border-radius-sm;
 
-	@include breakpoint-min(md) {
-		flex: 1;
-	}
+    @include breakpoint-min(lg) {
+        flex: 1;
+    }
 }
 
 .title {
-	font-size: $small;
-	font-weight: $fw-medium;
-	white-space: nowrap;
-	margin-top: $text-spacer-xs;
+    font-size: $small;
+    font-weight: $fw-medium;
+    white-space: nowrap;
+    margin-top: $text-spacer-xs;
 
-	@include breakpoint-min(lg) {
-		font-size: $body-2;
-	}
+    @include breakpoint-min(lg) {
+        font-size: $body-2;
+    }
 }
