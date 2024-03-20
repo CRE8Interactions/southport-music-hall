@@ -9,7 +9,7 @@ import { EventCard } from './EventCard';
 
 export default function UpcomingEvents({ events }) {
     return (
-        <Row className='spacer-top grid-container grid-container grid-container-lg gy-md-4'>
+        <Row className='spacer-top grid-container grid-container grid-container-lg g-md-4'>
             {events?.map(event => (
                 <Col md={6} lg={4} key={event.id}>
                     <EventCard event={event} />
