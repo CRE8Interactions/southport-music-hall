@@ -23,7 +23,7 @@
             flex-direction: column;
             height: rem(187);
             font-weight: $fw-medium;
-            padding: rem(12) rem(20) rem(15);
+            padding: $text-spacer-xs rem(20);
         }
 
         &-title {
