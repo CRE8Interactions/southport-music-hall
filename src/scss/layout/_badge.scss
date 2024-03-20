@@ -1,5 +1,6 @@
 @use '../abstracts' as *;
-@use '../layout/container' as *;
+@use './container' as *;
+@use './typography' as *;
 @use '../theme/colors' as *;
 
 .badge {
@@ -7,9 +8,10 @@
     display: inline-flex;
     align-items: center;
     gap: rem(8);
+    height: max-content;
 
     &-lg {
-        font-size: rem(28);
+        @extend .headline-4 !optional;
 
         @include breakpoint-min(md) {
             font-size: rem(44);
