@@ -5,9 +5,8 @@ $pad-sm: rem(24);
 $pad-md: rem(40);
 
 .container {
-    max-width: 1164px;
+    max-width: calc(1084px + $pad-md + $pad-md); // 1084px plus 40px padding on each side
     margin: 0 auto;
-
     padding-left: $pad-sm;
     padding-right: $pad-sm;
 
