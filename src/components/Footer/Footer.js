@@ -28,7 +28,7 @@ export default function Footer() {
                         <h6 className='mt-3 mt-lg-0 mt-md-5 mb-1 headline-6'>Southport Hall</h6>
                         <Stack gap={2} className={`gap-md-1 ${styles.address}`}>
                             <address className='m-0 text-muted fw-medium'>
-                                <p>200 Monticello Ave, <span className="d-block d-lg-inline">Jefferson, LA 70121</span></p>
+                                <p>200 Monticello Ave, Jefferson, LA 70121</p>
                             </address>
                             <Stack direction="horizontal" as="ul" className={styles.socialIcons}>
                                 <li>
@@ -50,7 +50,7 @@ export default function Footer() {
                         </Stack>
                     </Stack>
                     <div className={`${styles.poweredBy} d-flex flex-column flex-md-row align-items-center justify-content-center caption`}>
-                        <p className="text-muted text-center text-lg-end p-lg-4"><span>Powered by</span> <Image src={poweredBy} width="132" height="29" alt="Blocktickets logo" /></p>
+                        <p className="text-muted text-center text-lg-end px-lg-4"><span>Powered by</span> <Image src={poweredBy} width="132" height="29" alt="Blocktickets logo" /></p>
                     </div>
                 </Stack>
             </Card>
