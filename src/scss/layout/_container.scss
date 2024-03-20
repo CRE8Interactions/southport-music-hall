@@ -5,10 +5,12 @@ $pad-sm: rem(24);
 $pad-md: rem(40);
 
 .container {
-    max-width: 1130px;
+    max-width: 1164px;
     margin: 0 auto;
+
     padding-left: $pad-sm;
     padding-right: $pad-sm;
+
     @include breakpoint-min(md) {
         padding-right: $pad-md;
         padding-left: $pad-md;
