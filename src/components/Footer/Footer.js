@@ -7,7 +7,7 @@ import Image from 'next/image'
 import Card from 'react-bootstrap/Card';
 import Stack from 'react-bootstrap/Stack';
 
-import logo from "/public/images/logo.png"
+import logo from "/public/images/logo-sm.png"
 import poweredBy from "/public/images/icons/logo-blocktickets.svg"
 import facebook from '/public/images/icons/facebook.svg';
 import instagram from '/public/images/icons/instagram.svg';
@@ -22,10 +22,10 @@ export default function Footer() {
             <Card body className='card-lg'>
                 <Stack className="d-flex-column flex-lg-row gap-lg-5 align-items-center align-items-lg-stretch">
                     <Link href="/">
-                        <Image src={logo} width="67" height="92" alt="Southport Hall logo" />
+                        <Image src={logo} width="71" height="100" alt="Southport Hall logo" className={styles.logo} />
                     </Link>
                     <Stack className={styles.info}>
-                        <h6 className='mt-3 mt-lg-0 mt-md-5 mb-1 headline-6'>Southport Hall</h6>
+                        <h6 className='mt-3 mt-lg-0 mt-md-4 mb-1 headline-6'>Southport Hall</h6>
                         <Stack gap={2} className={`gap-md-1 ${styles.address}`}>
                             <address className='m-0 text-muted fw-medium'>
                                 <p>200 Monticello Ave, Jefferson, LA 70121</p>

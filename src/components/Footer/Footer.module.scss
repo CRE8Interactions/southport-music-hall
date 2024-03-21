@@ -6,6 +6,11 @@
 .footer {
     padding-bottom: $text-spacer;
 
+    .logo {
+        @include breakpoint-inBetween(md, lg) {
+            width: rem(58);
+        }
+    }
     .info,
     .address,
     .socialIcons {
