@@ -44,17 +44,11 @@
         @include breakpoint-min(lg) {
             border-left: border();
             padding-left: $text-spacer;
-            flex: 2;
+            flex: 1 1 auto;
         }
-        p {
-            @include breakpoint-min(lg) {
-                padding-top: rem(20);
-                padding-bottom: rem(20);
-            }
 
-            span {
-                vertical-align: middle;
-            }
+        span {
+            vertical-align: middle;
         }
     }
 }

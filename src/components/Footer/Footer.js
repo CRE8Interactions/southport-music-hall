@@ -50,7 +50,7 @@ export default function Footer() {
                         </Stack>
                     </Stack>
                     <div className={`${styles.poweredBy} d-flex flex-column flex-md-row align-items-center justify-content-center caption`}>
-                        <p className="text-muted text-center text-lg-end px-lg-4"><span>Powered by</span> <Image src={poweredBy} width="132" height="29" alt="Blocktickets logo" /></p>
+                        <p className="text-muted text-center text-lg-end"><span>Powered by</span> <Image src={poweredBy} width="132" height="29" alt="Blocktickets logo" /></p>
                     </div>
                 </Stack>
             </Card>
