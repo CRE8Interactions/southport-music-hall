@@ -56,7 +56,7 @@ export default function Navigation() {
             </Link>
             <Container>
                 <Link href="/" className="navbar-brand mobile-tablet-only">
-                    <Image src={desktopLogo} alt="Southport Hall logo" width="67" height="92" className='logo' />
+                    <Image src={logo} alt="Southport Hall logo" width="67" height="92" className='logo' />
                 </Link>
                 <Nav as="nav" variant="pills" defaultActiveKey="/" activeKey={router.pathname} className="ms-auto">
                     <Dropdown className='mobile-only ms-auto' align="end">
