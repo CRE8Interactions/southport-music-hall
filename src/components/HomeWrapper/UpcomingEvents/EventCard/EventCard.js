@@ -1,13 +1,10 @@
 import React from 'react';
-import Link from 'next/link';
 import moment from "moment";
 
 import { formatDateTime, formatCurrency } from '@/utilities/helpers';
 
 import Card from 'react-bootstrap/Card'
 import Stack from 'react-bootstrap/Stack'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 
 export default function EventCard({ event }) {
     let lowTicketCost = Math.min(...event.tickets.map(o => o.cost))
@@ -17,7 +14,7 @@ export default function EventCard({ event }) {
     let convertedDoorsOpen = moment(event?.doorsOpen).utcOffset(-5, false)
 
     return (
-        <Link href={`https://blocktickets.xyz/e/${event.seoUrl}/${event.shortCode}`} target="_blank" className='text-decoration-none text-reset'>
+        <a href={`https://blocktickets.xyz/e/${event.seoUrl}/${event.shortCode}`} target="_blank" className='text-decoration-none text-reset'>
             <Card className='event-card'>
                 <Card.Img
                     variant='top'
@@ -51,6 +48,6 @@ export default function EventCard({ event }) {
                     </Stack>
                 </Card.Body>
             </Card>
-        </Link>
+        </a>
     );
 }

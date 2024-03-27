@@ -115,9 +115,9 @@ export default function Navigation() {
                 </Nav>
             </Container>
             <div className="bg-white p-2 rounded-circle desktop-only">
-                <Link href="https://blocktickets.xyz" target="_blank">
+                <a href="https://blocktickets.xyz" target="_blank">
                     <Image src={icon} alt="Blocktickets logo" width="32" height="32" />
-                </Link>
+                </a>
             </div>
         </Navbar>
     );

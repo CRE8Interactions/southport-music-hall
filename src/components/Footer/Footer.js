@@ -32,19 +32,19 @@ export default function Footer() {
                             </address>
                             <Stack direction="horizontal" as="ul" className={styles.socialIcons}>
                                 <li>
-                                    <Link href="https://www.facebook.com/southporthall" target="_blank">
+                                    <a href="https://www.facebook.com/southporthall" target="_blank">
                                         <Image src={facebook} alt="facebook" />
-                                    </Link>
+                                    </a>
                                 </li>
                                 <li>
-                                    <Link href="https://twitter.com/Southporthall" target="_blank">
+                                    <a href="https://twitter.com/Southporthall" target="_blank">
                                         <Image src={twitter} alt="twitter" />
-                                    </Link>
+                                    </a>
                                 </li>
                                 <li>
-                                    <Link href="https://www.instagram.com/southporthall" target="_blank">
+                                    <a href="https://www.instagram.com/southporthall" target="_blank">
                                         <Image src={instagram} alt="instagram" />
-                                    </Link>
+                                    </a>
                                 </li>
                             </Stack>
                         </Stack>
