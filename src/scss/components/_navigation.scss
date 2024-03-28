@@ -3,6 +3,7 @@
 @use '../layout/pills' as *;
 @use '../layout/spacing' as *;
 @use '../theme/colors' as *;
+@use '../theme/pills' as *;
 
 // override bootstrap styling
 .navigation {
@@ -41,5 +42,10 @@
     .nav-link {
         padding-top: $pills-pad-y;
         padding-bottom: $pills-pad-y;
+
+        &:hover,
+        &:focus {
+            background-color: $nav-pills-link-active-bg;
+        }
     }
 }
