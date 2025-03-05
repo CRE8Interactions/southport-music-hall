@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card'
 import Stack from 'react-bootstrap/Stack'
 
 export default function EventCard({ event }) {
-    let lowTicketCost = Math.min(...event.tickets.map(o => o.cost))
+    let lowTicketCost = Math.min(...Object.values(event.pricingLevels).map(o => o.price))
 
     let convertedStart = moment(event?.start).utcOffset(-5, false)
     let convertedEnd = moment(event?.end).utcOffset(-5, false)
