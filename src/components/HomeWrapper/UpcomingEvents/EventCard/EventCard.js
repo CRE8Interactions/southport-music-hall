@@ -7,7 +7,19 @@ import Card from 'react-bootstrap/Card'
 import Stack from 'react-bootstrap/Stack'
 
 export default function EventCard({ event }) {
-    let lowTicketCost = Math.min(...Object.values(event.pricingLevels).map(o => o.price))
+    const offerPrices = event?.offers?.flatMap(offer => offer?.am_pricing_objects?.map(pricing => pricing?.totalDue));
+    // get any connected offers 
+    const discountPrices = event?.offers
+        .filter((offer) => offer?.connected_offers?.length > 0) // Ensure offer has some connected_offers
+        .flatMap((offer) =>
+            offer?.connected_offers.flatMap((offer) =>
+                offer?.am_pricing_objects?.map((pricing) => pricing?.totalDue)
+            )
+        );
+
+    const validPrices = [...offerPrices, ...(discountPrices?.length > 0 ? discountPrices : [])]
+
+    const lowTicketCost = Math.min(...validPrices);
 
     let convertedStart = moment(event?.start).utcOffset(-5, false)
     let convertedEnd = moment(event?.end).utcOffset(-5, false)
