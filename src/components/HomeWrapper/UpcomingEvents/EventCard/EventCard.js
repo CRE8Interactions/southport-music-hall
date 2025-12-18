@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import moment from "moment";
 
-import { formatDateTime, formatCurrency } from '@/utilities/helpers';
+import { formatDateTime, getTimezoneDate, formatCurrency } from '@/utilities/helpers';
 
 import Card from 'react-bootstrap/Card'
 import Stack from 'react-bootstrap/Stack'
 
 export default function EventCard({ event }) {
+    const [end, setEnd] = useState();
+
     const offerPrices = event?.offers?.flatMap(offer => offer?.am_pricing_objects?.map(pricing => pricing?.totalDue));
     // get any connected offers 
     const discountPrices = event?.offers
@@ -21,9 +23,15 @@ export default function EventCard({ event }) {
 
     const lowTicketCost = Math.min(...validPrices);
 
-    let convertedStart = moment(event?.start).utcOffset(-5, false)
-    let convertedEnd = moment(event?.end).utcOffset(-5, false)
-    let convertedDoorsOpen = moment(event?.doorsOpen).utcOffset(-5, false)
+    let convertedStart = getTimezoneDate(event?.start, event?.venue?.timezone)
+    console.log(convertedStart);
+    let convertedDoorsOpen = getTimezoneDate(event?.doorsOpen, event?.venue?.timezone)
+
+    useEffect(() => {
+        // end date is calculated based on start date and current time (includes daylight-savings) - can change based on daylight-savings, so needs to be recalculated since backend may be wrong 
+        // set end date to 4 hours after event start date
+        setEnd(new Date(moment(convertedStart).add(4, "h")));
+    }, [convertedStart]);
 
     return (
         <a href={`https://blocktickets.xyz/e/${event.seoUrl}/${event.shortCode}`} target="_blank" className='text-decoration-none text-reset'>
@@ -44,7 +52,7 @@ export default function EventCard({ event }) {
                         <Stack className='justify-content-between'>
                             <div className='d-flex-column'>
                                 <Card.Title as="h5">{event.name}</Card.Title>
-                                <Card.Subtitle as="h6">{formatDateTime(moment(convertedStart))} - {formatDateTime(moment(convertedEnd), 'timeOnly')}</Card.Subtitle>
+                                <Card.Subtitle as="h6">{formatDateTime(moment(convertedStart))} - {formatDateTime(moment(end), 'timeOnly')}</Card.Subtitle>
                             </div>
                             <div className="d-flex-column gap-1">
                                 <p className='small room text-primary'>{event?.venue?.name?.substring(event?.venue?.name?.indexOf(": ") + 1)}</p>
